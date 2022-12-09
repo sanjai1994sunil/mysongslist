@@ -302,9 +302,9 @@ app.get("/profile/", authenticateToken, async (request, response) => {
 });
 
 
-
-app.listen(3000, () => {
-  console.log("Server Running at http://localhost:3000/");
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => {
+  console.log("Server Running at http://localhost:"+ PORT);
   connection.connect(function (err) {
     if (err) throw err;
     console.log('Database Connected!');
